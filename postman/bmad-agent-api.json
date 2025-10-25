@@ -1,0 +1,74 @@
+{
+  "info": {
+    "name": "BMAD-Method AI Agent API",
+    "description": "API endpoints for testing BMAD AI agents",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Start Agent",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/agent/start",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["agent", "start"]
+        }
+      }
+    },
+    {
+      "name": "Query Agent",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"What is the status of employee onboarding?\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/agent/query",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["agent", "query"]
+        }
+      }
+    },
+    {
+      "name": "Trigger Workflow",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"workflow\": \"HR_Automation\",\n  \"parameters\": {\n    \"employeeId\": \"EMP001\",\n    \"action\": \"onboard\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/agent/workflow",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["agent", "workflow"]
+        }
+      }
+    }
+  ]
+}

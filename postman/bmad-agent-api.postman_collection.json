@@ -1,0 +1,169 @@
+{
+  "info": {
+    "name": "BMAD-Method AI Agent API",
+    "description": "API endpoints for testing BMAD AI agents in greenfield-fullstack project",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Agent Management",
+      "item": [
+        {
+          "name": "Start Agent",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/agent/start",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["agent", "start"]
+            },
+            "description": "Initialize and start the AI agent"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Query Operations",
+      "item": [
+        {
+          "name": "Send Query to Agent",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"What is the status of employee onboarding?\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/agent/query",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["agent", "query"]
+            },
+            "description": "Send a query to the AI agent for processing"
+          },
+          "response": []
+        },
+        {
+          "name": "HR Query Example",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"List all pending employee tasks\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/agent/query",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["agent", "query"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Workflow Automation",
+      "item": [
+        {
+          "name": "Trigger HR Workflow",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"workflow\": \"HR_Automation\",\n  \"parameters\": {\n    \"employeeId\": \"EMP001\",\n    \"action\": \"onboard\"\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/agent/workflow",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["agent", "workflow"]
+            },
+            "description": "Trigger automated HR workflow for employee onboarding"
+          },
+          "response": []
+        },
+        {
+          "name": "Trigger CRM Workflow",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"workflow\": \"CRM_Automation\",\n  \"parameters\": {\n    \"customerId\": \"CUST001\",\n    \"action\": \"follow_up\"\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/agent/workflow",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["agent", "workflow"]
+            },
+            "description": "Trigger automated CRM workflow for customer follow-up"
+          },
+          "response": []
+        },
+        {
+          "name": "Trigger ERP Workflow",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"workflow\": \"ERP_Automation\",\n  \"parameters\": {\n    \"orderId\": \"ORD001\",\n    \"action\": \"process_order\"\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/agent/workflow",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["agent", "workflow"]
+            },
+            "description": "Trigger automated ERP workflow for order processing"
+          },
+          "response": []
+        }
+      ]
+    }
+  ] 
+}
